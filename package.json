@@ -2,7 +2,7 @@
   "name": "typescript-blockchain",
   "version": "1.0.0",
   "scripts": {
-    "test:build": "tsc"
+    "build": "tsc"
   },
   "repository": {
     "type": "git",
