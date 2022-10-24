@@ -1,7 +1,9 @@
 {
   "name": "typescript-blockchain",
   "version": "1.0.0",
-  "scripts": {},
+  "scripts": {
+    "test:build": "tsc"
+  },
   "repository": {
     "type": "git",
     "url": "git@github.com-lee-tae-eon:lee-tae-eon/typescript-blockchain.git"
