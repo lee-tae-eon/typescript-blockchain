@@ -1,5 +1,4 @@
 import { init, exit } from "myPackage";
-localStorage;
 
 init({ urls: "test" });
 exit({ test: 3 });
