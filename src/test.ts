@@ -8,18 +8,15 @@ let c = [1, 2, 3];
 // * 명시적 타입은 최소한으로 쓰는 게 좋다. 타입스크립트가 타입 추론을 하도록 하는게 나음
 
 type Age = number;
-
+type Name = string;
 type Player = {
-  name: string;
+  readonly name: Name;
   age?: Age;
 };
 
 const player: Player = {
   name: "devlee",
   age: 3,
-};
-const playLynn: Player = {
-  name: "Lynn",
 };
 
 function createPlayer(name: string, age?: number): Player {
