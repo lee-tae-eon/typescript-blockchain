@@ -9,14 +9,11 @@ let c = [1, 2, 3];
 
 type Age = number;
 type Name = string;
+
+// * readonly
 type Player = {
   readonly name: Name;
   age?: Age;
-};
-
-const player: Player = {
-  name: "devlee",
-  age: 3,
 };
 
 function createPlayer(name: string, age?: number): Player {
@@ -24,3 +21,11 @@ function createPlayer(name: string, age?: number): Player {
     name,
   };
 }
+
+const devlee = createPlayer("devlee");
+// devlee.name = "test" //* readonly error
+// * readonly 는 immutable이다.
+const numbers: readonly number[] = [1, 2, 3, 4, 5];
+
+//* Tuple 최소 길이 특정 위치 특정 요소
+const newPlayer: [string, number, boolean] = ["!", 1, false];
