@@ -40,6 +40,16 @@ const push: Push = (config) => {
   if (typeof config === "string") {
     console.log("test");
   } else {
-    console.log(config.path);
+    console.log(config.path, config.state);
   }
+};
+// * overloading을 하더라도 parameter의 개수는 같으면 좋고
+// * 다르다면 옵셔널을 걸어주자
+type Add4Type = {
+  (a: number, b: number): number;
+  (a: number, b: number, c: number): number;
+};
+
+const add4: Add4Type = (a, b, c?: number) => {
+  return a + b;
 };
