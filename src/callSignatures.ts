@@ -18,3 +18,28 @@ const add3: Add3Type = (a, b) => {
   if (typeof b === "string") return a;
   return a + b;
 };
+
+// * ex
+// Router.push({
+//   path: "/",
+//   state: 1
+// })
+// Router.push("/")
+
+type Config = {
+  path: string;
+  state: object;
+};
+
+type Push = {
+  (path: string): void;
+  (config: Config): void;
+};
+
+const push: Push = (config) => {
+  if (typeof config === "string") {
+    console.log("test");
+  } else {
+    console.log(config.path);
+  }
+};
