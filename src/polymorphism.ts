@@ -4,16 +4,16 @@
 // * polymorphism을 이용해 generic을 주는 것이 더 좋다.
 type SuperPrint = {
   // * generic 사용법
-  <T>(arr: T[]): void;
+  <T>(arr: T[]): T;
   // (arr: boolean[]): void;
   // (arr: string[]): void;
 };
 
 const superPrint: SuperPrint = (arr) => {
-  arr.forEach((i) => console.log(i));
+  return arr[0];
 };
 
-superPrint([1, 2, 3, 4]);
-superPrint([true, false, false, true]);
-superPrint(["1", "@", "3"]);
-superPrint(["1", "@", "3", true, false]);
+const a = superPrint([1, 2, 3, 4]);
+const b = superPrint([true, false, false, true]);
+const c = superPrint(["1", "@", "3"]);
+const d = superPrint(["1", "@", "3", true, false]);
