@@ -4,7 +4,7 @@
 // * polymorphism을 이용해 generic을 주는 것이 더 좋다.
 type SuperPrint = {
   // * generic 사용법
-  <T>(arr: T[]): T;
+  <T, M>(arr: T[], b?: M): T;
   // (arr: boolean[]): void;
   // (arr: string[]): void;
 };
