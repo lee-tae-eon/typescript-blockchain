@@ -16,7 +16,24 @@ function superPrint2<T>(a: T[]) {
   return a[0];
 }
 
-const a = superPrint([1, 2, 3, 4]);
-const b = superPrint([true, false, false, true]);
-const c = superPrint(["1", "@", "3"]);
-const d = superPrint(["1", "@", "3", true, false]);
+// const a = superPrint([1, 2, 3, 4]);
+// const b = superPrint([true, false, false, true]);
+// const c = superPrint(["1", "@", "3"]);
+// const d = superPrint(["1", "@", "3", true, false]);
+
+const a = superPrint2<number>([1, 2, 3, 4]);
+const b = superPrint2<boolean>([true, false, false, true]);
+const c = superPrint2<string>(["1", "@", "3"]);
+const d = superPrint2<string | boolean>(["1", "@", "3", true, false]);
+
+type NewPlayer<E> = {
+  name: string;
+  extraInfo: E;
+};
+
+const lee: NewPlayer<{ fav: string }> = {
+  name: "taeeon",
+  extraInfo: {
+    fav: "test",
+  },
+};
