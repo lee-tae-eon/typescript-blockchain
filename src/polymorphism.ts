@@ -9,9 +9,12 @@ type SuperPrint = {
   // (arr: string[]): void;
 };
 
-const superPrint: SuperPrint = (arr) => {
-  return arr[0];
-};
+const superPrint: SuperPrint = (arr) => arr[0];
+
+// * another way
+function superPrint2<T>(a: T[]) {
+  return a[0];
+}
 
 const a = superPrint([1, 2, 3, 4]);
 const b = superPrint([true, false, false, true]);
