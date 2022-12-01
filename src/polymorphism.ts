@@ -31,7 +31,13 @@ type NewPlayer<E> = {
   extraInfo: E;
 };
 
-const lee: NewPlayer<{ fav: string }> = {
+type LeeExtra = {
+  fav: string;
+};
+
+type LeePlayer = NewPlayer<LeeExtra>;
+
+const lee: LeePlayer = {
   name: "taeeon",
   extraInfo: {
     fav: "test",
