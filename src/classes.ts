@@ -6,14 +6,14 @@ abstract class User {
     private firstName: string,
     private lastName: string,
     public nickName: string,
-    protected wifeName?: string
+    protected wifeName: string
   ) {}
 
   // * abstract methods = 추상 클래스를 상속받는 클래스들이 구현해야하는 메소드이다.
   // * property를 private으로 만들면 클래스를 상속하더라도 그 property 에 접근할수 없다
   abstract getNickName(): void;
 
-  private getFullName() {
+  protected getFullName() {
     return `${this.firstName}-${this.lastName}`;
   }
 }
@@ -28,8 +28,6 @@ class Player extends User {
 
 const taeeon = new Player("lee", "taeeon", "taeeon", "huikyung");
 
-taeeon.getNickName();
-
 // * in javascript
 // * class Player {
 // *    constructor (firstName, lastName) {
@@ -37,3 +35,27 @@ taeeon.getNickName();
 //*           this.lastName = lastName;
 //*        }
 // *  }
+
+// *          ------------------------
+
+type Words = {
+  [key: string]: string;
+};
+
+class Dict {
+  private words: Words;
+  constructor() {
+    this.words = {};
+  }
+  add(word: Word) {
+    if (this.words[word.term] === undefined) {
+      this.words[word.term] = word.def;
+    }
+  }
+}
+
+class Word {
+  constructor(public term: string, public def: string) {}
+}
+
+const kimchi = new Word("kim", "korean food");
