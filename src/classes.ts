@@ -47,11 +47,18 @@ class Dict {
   constructor() {
     this.words = {};
   }
+  // * class 를 parameter 의 type으로 사용
   add(word: Word) {
     if (this.words[word.term] === undefined) {
       this.words[word.term] = word.def;
     }
   }
+  def(term: string) {
+    return this.words[term];
+  }
+
+  // todo : delete
+  // todo : update
 }
 
 class Word {
@@ -59,3 +66,10 @@ class Word {
 }
 
 const kimchi = new Word("kim", "korean food");
+
+const dict = new Dict();
+
+dict.add(kimchi);
+dict.def("kim");
+
+console.log(dict.def("kim"));
