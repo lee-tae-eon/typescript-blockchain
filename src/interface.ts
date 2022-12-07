@@ -12,11 +12,17 @@ const test: Standards = {
   healthBar: 1,
 };
 
-interface SuperUser {
-  name: string;
-}
+// interface SuperUser {
+//   name: string;
+// }
 
-interface HealthPlayer extends SuperUser {}
+// interface HealthPlayer extends SuperUser {}
+// * 위 interfae는 아래처럼쓰일 수 있다.
+type SuperUser = {
+  name: string;
+};
+// * & 연산자 = AND 연산자
+type HealthPlayer = SuperUser & {};
 
 const option: HealthPlayer = {
   name: "taeeon",
