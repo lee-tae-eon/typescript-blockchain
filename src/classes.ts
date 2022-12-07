@@ -43,22 +43,34 @@ type Words = {
 };
 
 class Dict {
-  private words: Words;
-  constructor() {
-    this.words = {};
-  }
+  private words: Words = {};
+  // constructor() {
+  //   this.words = {};
+  // }
   // * class 를 parameter 의 type으로 사용
   add(word: Word) {
     if (this.words[word.term] === undefined) {
       this.words[word.term] = word.def;
     }
   }
+
+  // todo : delete
+  delete(word: Word) {
+    if (this.words[word.term]) {
+      delete this.words[word.term];
+      console.log(this.words);
+    }
+  }
+  // todo : update
+  update(word: Word, updateDef: string) {
+    this.words[word.term] = updateDef;
+  }
   def(term: string) {
     return this.words[term];
   }
-
-  // todo : delete
-  // todo : update
+  list() {
+    console.log(this.words);
+  }
 }
 
 class Word {
@@ -70,6 +82,7 @@ const kimchi = new Word("kim", "korean food");
 const dict = new Dict();
 
 dict.add(kimchi);
-dict.def("kim");
 
-console.log(dict.def("kim"));
+dict.update(kimchi, "한국음식이야");
+
+console.log(dict.list());
