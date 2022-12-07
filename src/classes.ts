@@ -74,7 +74,8 @@ class Dict {
 }
 
 class Word {
-  constructor(public term: string, public def: string) {}
+  // * public이라 외부 사용은 가능하지만 readonly로 property의 변경을 막아줌
+  constructor(public readonly term: string, public readonly def: string) {}
 }
 
 const kimchi = new Word("kim", "korean food");
