@@ -27,3 +27,17 @@ type HealthPlayer = SuperUser & {};
 const option: HealthPlayer = {
   name: "taeeon",
 };
+
+// * ----------------------------------
+
+abstract class IUser {
+  constructor(protected firstName: string, protected lastName: string) {}
+  abstract sayHi(name: string): string;
+  abstract fullName(): string;
+}
+
+class IPlayer extends IUser {
+  fullName() {
+    return `${this.firstName} ${this.lastName}`;
+  }
+}
