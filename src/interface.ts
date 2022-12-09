@@ -40,4 +40,7 @@ class IPlayer extends IUser {
   fullName() {
     return `${this.firstName} ${this.lastName}`;
   }
+  sayHi(name: string): string {
+    return this.fullName();
+  }
 }
