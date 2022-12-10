@@ -29,7 +29,7 @@ const option: HealthPlayer = {
 };
 
 // * ----------------------------------
-
+console.log("test");
 abstract class IUser {
   constructor(protected firstName: string, protected lastName: string) {}
   abstract sayHi(name: string): string;
