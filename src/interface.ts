@@ -34,17 +34,31 @@ const option: HealthPlayer = {
 // repeat: asbtract class는  instance를 허용하지 않는다.
 // non exist on javascript , so abstarct class is changed to general class in javascript
 
-abstract class IUser {
-  constructor(protected firstName: string, protected lastName: string) {}
-  abstract sayHi(name: string): string;
-  abstract fullName(): string;
+// on top - this is cause why use the interface
+// interface is disapper on compile
+// 인터페이스를 쓸 때 클래스가 특정 형태를 따르도록 강제하는 방법.
+// 추상 클래스를 interface로 바꿔보자
+// abstract class IUser {
+//   constructor(protected firstName: string, protected lastName: string) {}
+//   abstract sayHi(name: string): string;
+//   abstract fullName(): string;
+// }
+
+interface IUser {
+  firstName: string;
+  lastName: string;
+  sayHi(name: string): string;
+  fullName(): string;
 }
 
-class IPlayer extends IUser {
+// interface를 class에서 extends할때는 typescript에서 제공하는 implements를 사용하자.
+// interface를 상속할 때에는 property를 private 으로 만들지 못한다.
+class IPlayer implements IUser {
+  constructor(private firstName: string, private lastName: string) {}
   fullName() {
     return `${this.firstName} ${this.lastName}`;
   }
-  sayHi(name: string): string {
-    return `Hello ${name}. My name is ${this.fullName()}`;
+  sayHi(name: string) {
+    return `${name} hello how are you!!`;
   }
 }
