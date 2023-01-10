@@ -59,6 +59,7 @@ interface Human {
 // interface를 상속할 때에는 property를 private, protected 으로 만들지 못한다.
 // file size를 줄이는데 큰 역할을 할수있다.
 // 여러개의 interface를 동시에 상속이 가능하다.
+// 동시에 여러 곳에서 사용가능 함수의 파라미터 타입도 되고 아무튼 여러 곳에서 사용가능하다는 장점이 있다.
 class IPlayer implements IUser, Human {
   constructor(
     public firstName: string,
