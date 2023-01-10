@@ -51,14 +51,24 @@ interface IUser {
   fullName(): string;
 }
 
+interface Human {
+  health: number;
+}
+
 // interface를 class에서 extends할때는 typescript에서 제공하는 implements를 사용하자.
-// interface를 상속할 때에는 property를 private 으로 만들지 못한다.
-class IPlayer implements IUser {
-  constructor(private firstName: string, private lastName: string) {}
+// interface를 상속할 때에는 property를 private, protected 으로 만들지 못한다.
+// file size를 줄이는데 큰 역할을 할수있다.
+// 여러개의 interface를 동시에 상속이 가능하다.
+class IPlayer implements IUser, Human {
+  constructor(
+    public firstName: string,
+    public lastName: string,
+    public health: number
+  ) {}
   fullName() {
     return `${this.firstName} ${this.lastName}`;
   }
   sayHi(name: string) {
-    return `${name} hello how are you!!`;
+    return `${name} hello how are you!! ${this.fullName()}`;
   }
 }
