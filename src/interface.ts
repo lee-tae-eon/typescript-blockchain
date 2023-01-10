@@ -29,7 +29,11 @@ const option: HealthPlayer = {
 };
 
 // * ----------------------------------
-console.log("test");
+// user의 추상 클래스와 player 클래스를 구현 해보자.
+// abstract class는 상속받는 다른 클래스가 가질 property와 메소드를 지정하도록 해준다.
+// repeat: asbtract class는  instance를 허용하지 않는다.
+// non exist on javascript , so abstarct class is changed to general class in javascript
+
 abstract class IUser {
   constructor(protected firstName: string, protected lastName: string) {}
   abstract sayHi(name: string): string;
@@ -41,6 +45,6 @@ class IPlayer extends IUser {
     return `${this.firstName} ${this.lastName}`;
   }
   sayHi(name: string): string {
-    return this.fullName();
+    return `Hello ${name}. My name is ${this.fullName()}`;
   }
 }
