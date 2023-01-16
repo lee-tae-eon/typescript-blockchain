@@ -43,3 +43,5 @@ const lee: LeePlayer = {
     fav: "test",
   },
 };
+
+export {};

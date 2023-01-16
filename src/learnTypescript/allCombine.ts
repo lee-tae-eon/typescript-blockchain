@@ -28,3 +28,5 @@ const booleanStorage = new LocalStorage<boolean>();
 booleanStorage.get("boolean");
 booleanStorage.set("hello", false);
 console.log(booleanStorage.get("hello"));
+
+export {};

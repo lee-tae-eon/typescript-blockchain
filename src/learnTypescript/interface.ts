@@ -120,3 +120,5 @@ class UserA implements ClassPlayerB {
 
 // * typescript community에서는 클래스나 오브젝트의 shape를 define 하고 싶으면
 // * interface를 사용하고 다른 모든경우에서는 type을 쓰라고 권장한다.
+
+export {};

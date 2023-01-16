@@ -53,3 +53,5 @@ type Add4Type = {
 const add4: Add4Type = (a, b, c?: number) => {
   return a + b;
 };
+
+export {};

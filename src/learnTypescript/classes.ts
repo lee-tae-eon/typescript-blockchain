@@ -87,3 +87,5 @@ dict.add(kimchi);
 dict.update(kimchi, "한국음식이야");
 
 console.log(dict.list());
+
+export {};

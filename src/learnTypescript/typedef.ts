@@ -31,3 +31,5 @@ function initialTypescript() {
   //* Tuple 최소 길이 특정 위치 특정 요소
   const newPlayer: [string, number, boolean] = ["!", 1, false];
 }
+
+export {};
