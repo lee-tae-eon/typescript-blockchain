@@ -73,3 +73,50 @@ class IPlayer implements IUser, Human {
     return `${name} hello how are you!! ${this.fullName()}`;
   }
 }
+
+// Recap-------------------------------------------
+type PlayerA = {
+  name: string;
+};
+
+type PlayerAA = PlayerA & {
+  lastName: string;
+};
+
+const playerA: PlayerAA = {
+  name: "taeeon",
+  lastName: "taeeon2",
+};
+
+interface PlayerB {
+  name: string;
+}
+
+interface PlayerB {
+  lastName: string;
+}
+
+interface PlayerB {
+  health: number;
+}
+
+const playerB: PlayerB = {
+  name: "taeeon",
+  lastName: "taeeon2",
+  health: 32,
+};
+
+type ClassPlayerA = {
+  firstName: string;
+};
+
+interface ClassPlayerB {
+  firstName: string;
+}
+
+class UserA implements ClassPlayerB {
+  constructor(public firstName: string) {}
+}
+
+// * typescript community에서는 클래스나 오브젝트의 shape를 define 하고 싶으면
+// * interface를 사용하고 다른 모든경우에서는 type을 쓰라고 권장한다.
