@@ -6,7 +6,7 @@ interface BlockShape {
   height: number;
   data: string;
 }
-
+// * 주석 테스트
 class Block implements BlockShape {
   public hash: string;
   constructor(
